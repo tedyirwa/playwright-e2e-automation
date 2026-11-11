@@ -27,6 +27,19 @@ Feature: User Authentication
     Then the Account Deleted confirmation should be visible
     And the user clicks the Continue link
 
-  Scenario: TC002 - Login User with correct email and password
+ 
+  Scenario: TC002 - Login user with correct email and password
 
-   ...
+    Given the user is on the homepage
+    Then the homepage should be visible
+
+    When the user clicks the Signup / Login link
+    Then the Login to your account section should be visible
+
+    When the user enters a correct email address and password
+    And clicks the Login button
+    Then the user should be logged in
+    And the Logged in as username text should be visible
+
+    When the user clicks the Delete Account link
+    Then the Account Deleted confirmation should be visible

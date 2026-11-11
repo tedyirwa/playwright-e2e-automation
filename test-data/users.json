@@ -1,7 +1,7 @@
 {
     "validUsers": {
         "name": "Teds",
-        "email": "teds@irwa.com"
+        "email": "test@irwa.com"
     },
     "invalidUsers": {
         "name": "",
