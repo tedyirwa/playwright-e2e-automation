@@ -30,7 +30,7 @@ export class AuthPage {
         await this.buttonLogin.click();
     }
 
-    public async login(email: string, password: string): Promise<void> {
+    public async fillLoginForm(email: string, password: string): Promise<void> {
         await this.emailInputLogin.fill(email);
         await this.passwordInputLogin.fill(password);
     }
