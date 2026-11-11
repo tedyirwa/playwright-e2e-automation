@@ -74,3 +74,16 @@ Feature: User Authentication
     When the user clicks the Logout link
     Then the user should be navigated to the login page
     And the Login to your account section should be visible
+
+
+  Scenario: TC005 - Register user with existing email
+
+    Given the user is on the homepage
+    Then the homepage should be visible
+
+    When the user clicks the Signup / Login link
+    Then the New User Signup section should be visible
+
+    When the user enters a name and an already registered email address
+    And clicks the Signup button
+    Then the error message "Email Address already exist!" should be visible

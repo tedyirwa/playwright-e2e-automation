@@ -47,4 +47,8 @@ export class AuthPage {
     public get loginErrorMessage() {
         return this.page.getByText("Your email or password is incorrect!");
     }
+
+    public get signupErrorMessage() {
+        return this.page.getByText("Email Address already exist!");
+    }
 }
