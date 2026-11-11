@@ -39,4 +39,8 @@ export class HomePage {
     public async clickDeleteAccount(): Promise<void> {
         await this.deleteAccountLink.click();
     }
+
+    public async clickLogout(): Promise<void> {
+        await this.logoutLink.click();
+    }
 }

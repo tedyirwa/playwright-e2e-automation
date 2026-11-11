@@ -1,10 +1,9 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../../pages/ui/HomePage";
 import { AuthPage } from "../../pages/ui/AuthPage";
-import { AccountDeletedPage } from "../../pages/ui/AccountDeletedPage";
 import dataUsers from "../../test-data/users.json";
 
-test("TC002 - Login User with incorrect email and password", async ({ page }) => {
+test("TC003 - Login User with incorrect email and password", async ({ page }) => {
     const homePage = new HomePage(page);
     const authPage = new AuthPage(page);
 

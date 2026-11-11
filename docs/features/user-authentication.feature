@@ -56,3 +56,21 @@ Feature: User Authentication
     When the user enters an incorrect email address and password
     And clicks the Login button
     Then the error message "Your email or password is incorrect!" should be visible
+
+
+  Scenario: TC004 - Logout user
+
+    Given the user is on the homepage
+    Then the homepage should be visible
+
+    When the user clicks the Signup / Login link
+    Then the Login to your account section should be visible
+
+    When the user enters a correct email address and password
+    And clicks the Login button
+    Then the user should be logged in
+    And the Logged in as username text should be visible
+
+    When the user clicks the Logout link
+    Then the user should be navigated to the login page
+    And the Login to your account section should be visible
