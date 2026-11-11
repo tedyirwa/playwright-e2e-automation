@@ -43,4 +43,8 @@ export class AuthPage {
     public async clickSignup(): Promise<void> {
         await this.buttonSignup.click();
     }
+
+    public get loginErrorMessage() {
+        return this.page.getByText("Your email or password is incorrect!");
+    }
 }

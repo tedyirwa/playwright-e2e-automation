@@ -43,3 +43,16 @@ Feature: User Authentication
 
     When the user clicks the Delete Account link
     Then the Account Deleted confirmation should be visible
+
+
+  Scenario: TC003 - Login user with incorrect email and password
+
+    Given the user is on the homepage
+    Then the homepage should be visible
+
+    When the user clicks the Signup / Login link
+    Then the Login to your account section should be visible
+
+    When the user enters an incorrect email address and password
+    And clicks the Login button
+    Then the error message "Your email or password is incorrect!" should be visible
