@@ -1,7 +1,6 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
+import { HomePage } from "../../pages/ui/HomePage";
 
 test("should open Automation Exercise homepage", async ({ page }) => {
-    await page.goto("/");
-
-    await expect(page).toHaveTitle(/Automation Exercise/);
+    await new HomePage(page).openHomePage();
 });
