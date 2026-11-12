@@ -6,6 +6,8 @@ export class HomePage {
     private logoutLink;
     private deleteAccountLink;
     private contactUsLink;
+    private testCasesLink;
+    private closeVignette;
 
     constructor(private page: Page) {
         this.signupLoginLink = page.getByRole("link", {
@@ -27,6 +29,15 @@ export class HomePage {
         this.contactUsLink = page.getByRole("link", {
             name: "Contact us",
         });
+
+        this.testCasesLink = page
+            .getByRole("link", {
+                name: "Test Cases",
+                exact: true,
+            })
+            .first();
+
+        this.closeVignette = page.locator(".continue-prompt-text");
     }
 
     public async openHomePage(): Promise<void> {
@@ -52,5 +63,22 @@ export class HomePage {
 
     public async clickContactUs(): Promise<void> {
         await this.contactUsLink.click();
+    }
+
+    public async clickTestCase(): Promise<void> {
+        await this.testCasesLink.click();
+    }
+
+    public async closeVignetteIfVisible(): Promise<void> {
+        try {
+            await this.closeVignette.waitFor({
+                state: "visible",
+                timeout: 2000,
+            });
+
+            await this.closeVignette.click();
+        } catch {
+            // Vignette tidak muncul, lanjutkan test.
+        }
     }
 }
