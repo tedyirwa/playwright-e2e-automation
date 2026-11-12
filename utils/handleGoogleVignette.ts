@@ -2,7 +2,7 @@ import { Page } from "@playwright/test";
 
 export async function setupGoogleVignetteHandler(page: Page): Promise<void> {
     await page.addLocatorHandler(
-        page.getByRole("button", { name: "Close ad" }),
+        page.getByRole("button", { name: /^Close( ad)?$/i }),
         async (closeButton) => {
             await closeButton.click();
         },

@@ -19,3 +19,15 @@ Feature: Products
     When the user searches for a product
     Then the SEARCHED PRODUCTS section should be visible
     And the related products should be displayed
+
+  Scenario: TC012 - Add Products in Cart
+    Given the user is on the homepage
+    When the user clicks the Products button
+    And the user adds the first product to the cart
+    And the user continues shopping
+    And the user adds the second product to the cart
+    And the user views the cart
+    Then both products should be displayed in the cart
+    And the product prices should be correct
+    And the product quantities should be correct
+    And the total prices should be correct
