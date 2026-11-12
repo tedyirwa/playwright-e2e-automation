@@ -6,8 +6,10 @@ import { AccountCreatedPage } from "../../pages/ui/AccountCreatedPage";
 import { AccountDeletedPage } from "../../pages/ui/AccountDeletedPage";
 import dataUsers from "../../test-data/users.json";
 import { randomUUID } from "node:crypto";
+import { setupGoogleVignetteHandler } from "../../utils/handleGoogleVignette";
 
 test("TC001: Register a new user", async ({ page }) => {
+    await setupGoogleVignetteHandler(page);
     const homePage = new HomePage(page);
     const authPage = new AuthPage(page);
     const accountInformationPage = new AccountInformationPage(page);

@@ -2,8 +2,10 @@ import { test, expect } from "@playwright/test";
 import { HomePage } from "../../pages/ui/HomePage";
 import { AuthPage } from "../../pages/ui/AuthPage";
 import dataUsers from "../../test-data/users.json";
+import { setupGoogleVignetteHandler } from "../../utils/handleGoogleVignette";
 
 test("TC005 - Register user with existing email", async ({ page }) => {
+    await setupGoogleVignetteHandler(page);
     const homePage = new HomePage(page);
     const authPage = new AuthPage(page);
 

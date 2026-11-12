@@ -2,8 +2,10 @@ import { test, expect } from "@playwright/test";
 import { HomePage } from "../../pages/ui/HomePage";
 import { ContactUsPage } from "../../pages/ui/ContactUsPage";
 import dataUsers from "../../test-data/users.json";
+import { setupGoogleVignetteHandler } from "../../utils/handleGoogleVignette";
 
 test("TC006 - Contact Us Form", async ({ page }) => {
+    await setupGoogleVignetteHandler(page);
     const homePage = new HomePage(page);
     const contactUsPage = new ContactUsPage(page);
 
