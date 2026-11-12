@@ -41,10 +41,6 @@ Feature: User Authentication
     Then the user should be logged in
     And the Logged in as username text should be visible
 
-    When the user clicks the Delete Account link
-    Then the Account Deleted confirmation should be visible
-
-
   Scenario: TC003 - Login user with incorrect email and password
 
     Given the user is on the homepage

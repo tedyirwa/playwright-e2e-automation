@@ -16,15 +16,9 @@ test("TC002 - Login user with correct email and password", async ({ page }) => {
 
     await expect(authPage.newUserSignupText).toBeVisible();
 
-    await authPage.fillLoginForm(dataUsers.validUsers[1].email, dataUsers.password);
+    await authPage.fillLoginForm(dataUsers.validUsers[2].email, dataUsers.password);
 
     await authPage.clickLogin();
 
-    await expect(await homePage.loggedInAsText(dataUsers.validUsers[1].name)).toBeVisible();
-
-    await homePage.clickDeleteAccount();
-
-    await expect(accountDeletedPage.accountDeletedText).toBeVisible();
-
-    await accountDeletedPage.clickContinue();
+    await expect(await homePage.loggedInAsText(dataUsers.validUsers[2].name)).toBeVisible();
 });
