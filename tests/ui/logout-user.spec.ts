@@ -13,11 +13,11 @@ test("TC004 - Logout user", async ({ page }) => {
 
     await expect(authPage.newUserSignupText).toBeVisible();
 
-    await authPage.fillLoginForm(dataUsers.validUsers.email, dataUsers.password);
+    await authPage.fillLoginForm(dataUsers.validUsers[3].email, dataUsers.password);
 
     await authPage.clickLogin();
 
-    await expect(await homePage.loggedInAsText(dataUsers.validUsers.name)).toBeVisible();
+    await expect(await homePage.loggedInAsText(dataUsers.validUsers[3].name)).toBeVisible();
 
     await homePage.clickLogout();
 

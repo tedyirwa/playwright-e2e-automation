@@ -13,7 +13,7 @@ test("TC005 - Register user with existing email", async ({ page }) => {
 
     await expect(authPage.newUserSignupText).toBeVisible();
 
-    await authPage.fillSignupForm(dataUsers.validUsers.name, dataUsers.validUsers.email);
+    await authPage.fillSignupForm(dataUsers.validUsers[4].name, dataUsers.validUsers[4].email);
 
     await authPage.clickSignup();
 

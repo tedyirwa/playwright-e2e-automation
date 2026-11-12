@@ -1,13 +1,31 @@
 {
-    "validUsers": {
-        "name": "Teds",
-        "email": "test@irwa.com"
-    },
+    "validUsers": [
+        {
+            "name": "TC 1",
+            "email": "TC1@irwa.com"
+        },
+        {
+            "name": "TC 2",
+            "email": "TC2.2@irwa.com"
+        },
+        {
+            "name": "TC 3",
+            "email": "TC3@irwa.com"
+        },
+        {
+            "name": "TC 4",
+            "email": "TC4@irwa.com"
+        },
+        {
+            "name": "TC 5",
+            "email": "TC5@irwa.com"
+        }
+    ],
     "invalidUsers": {
         "name": "invalidemail",
         "email": "invalidemail@invalid.com"
     },
-    "password": "123456",
+    "password": "1",
     "gender": [
         "Mr.",
         "Mrs."

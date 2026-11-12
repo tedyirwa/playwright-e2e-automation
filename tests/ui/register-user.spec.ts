@@ -20,7 +20,7 @@ test("TC001: Register a new user", async ({ page }) => {
 
     await expect(authPage.newUserSignupText).toBeVisible();
 
-    await authPage.fillSignupForm(dataUsers.validUsers.name, `teds-${randomUUID()}@irwa.com`);
+    await authPage.fillSignupForm(dataUsers.validUsers[0].name, `teds-${randomUUID()}@irwa.com`);
 
     await authPage.clickSignup();
 
@@ -28,7 +28,7 @@ test("TC001: Register a new user", async ({ page }) => {
 
     await accountInformationPage.fillAccountInformationForm(
         dataUsers.gender[0],
-        dataUsers.validUsers.name,
+        dataUsers.validUsers[0].name,
         dataUsers.password,
         dataUsers.dateOfBirth.day,
         dataUsers.dateOfBirth.month,
@@ -56,7 +56,7 @@ test("TC001: Register a new user", async ({ page }) => {
 
     await accountCreatedPage.clickContinue();
 
-    await expect(await homePage.loggedInAsText(dataUsers.validUsers.name)).toBeVisible();
+    await expect(await homePage.loggedInAsText(dataUsers.validUsers[0].name)).toBeVisible();
 
     await homePage.clickDeleteAccount();
 
