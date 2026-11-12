@@ -16,8 +16,6 @@ test("TC001: Register a new user", async ({ page }) => {
 
     await homePage.openHomePage();
 
-    await expect(page).toHaveTitle(/Automation Exercise/);
-
     await homePage.clickSignupLogin();
 
     await expect(authPage.newUserSignupText).toBeVisible();

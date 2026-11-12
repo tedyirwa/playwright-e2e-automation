@@ -9,8 +9,6 @@ test("TC005 - Register user with existing email", async ({ page }) => {
 
     await homePage.openHomePage();
 
-    await expect(page).toHaveTitle(/Automation Exercise/);
-
     await homePage.clickSignupLogin();
 
     await expect(authPage.newUserSignupText).toBeVisible();

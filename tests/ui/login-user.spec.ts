@@ -12,8 +12,6 @@ test("TC002 - Login user with correct email and password", async ({ page }) => {
 
     await homePage.openHomePage();
 
-    await expect(page).toHaveTitle(/Automation Exercise/);
-
     await homePage.clickSignupLogin();
 
     await expect(authPage.newUserSignupText).toBeVisible();
