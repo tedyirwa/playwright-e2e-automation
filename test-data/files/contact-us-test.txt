@@ -1,0 +1,5 @@
+Playwright QA Automation Test
+
+Test Case: TC006 - Contact Us Form
+Purpose: Verify file upload functionality.
+Project: playwright-e2e-automation

@@ -5,6 +5,7 @@ export class HomePage {
     private productLink;
     private logoutLink;
     private deleteAccountLink;
+    private contactUsLink;
 
     constructor(private page: Page) {
         this.signupLoginLink = page.getByRole("link", {
@@ -21,6 +22,10 @@ export class HomePage {
 
         this.deleteAccountLink = page.getByRole("link", {
             name: "Delete Account",
+        });
+
+        this.contactUsLink = page.getByRole("link", {
+            name: "Contact us",
         });
     }
 
@@ -43,5 +48,9 @@ export class HomePage {
 
     public async clickLogout(): Promise<void> {
         await this.logoutLink.click();
+    }
+
+    public async clickContactUs(): Promise<void> {
+        await this.contactUsLink.click();
     }
 }

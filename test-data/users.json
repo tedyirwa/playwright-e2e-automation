@@ -30,5 +30,14 @@
         "city": "Semarang",
         "zipcode": "5123",
         "mobileNumber": "31243234234"
+    },
+    "contactUs": {
+        "name": "Teds",
+        "email": "test@irwa.com",
+        "subject": "Test Subject",
+        "message": "Test Message"
+    },
+    "contactUsFile": {
+        "filePath": "test-data/files/contact-us-test.txt"
     }
 }
