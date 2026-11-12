@@ -1,19 +1,12 @@
 import { Page } from "@playwright/test";
 
-export class AccountDeletedPage {
-    private buttonContinue;
+export class TestCasesPage {
+    constructor(private page: Page) {}
 
-    constructor(private page: Page) {
-        this.buttonContinue = page.getByRole("link", {
-            name: "Continue",
+    public get testCasesHeadingText() {
+        return this.page.getByRole("heading", {
+            name: "Test Cases",
+            exact: true,
         });
-    }
-
-    public get accountDeletedText() {
-        return this.page.getByText("Account Deleted!");
-    }
-
-    public async clickContinue(): Promise<void> {
-        await this.buttonContinue.click();
     }
 }
