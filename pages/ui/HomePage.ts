@@ -7,6 +7,7 @@ export class HomePage {
     private deleteAccountLink;
     private contactUsLink;
     private testCasesLink;
+    private cartLink;
     private footer;
     private subscriptionEmailInput;
     private subscriptionButton;
@@ -30,6 +31,10 @@ export class HomePage {
 
         this.contactUsLink = page.getByRole("link", {
             name: "Contact us",
+        });
+
+        this.cartLink = page.getByRole("link", {
+            name: "Cart",
         });
 
         this.testCasesLink = page
@@ -73,6 +78,10 @@ export class HomePage {
 
     public async clickTestCase(): Promise<void> {
         await this.testCasesLink.click();
+    }
+
+    public async clickCart(): Promise<void> {
+        await this.cartLink.click();
     }
 
     public async loggedInAsText(name: string) {
