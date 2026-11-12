@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test";
 
-export class ProductsDetailPage {
+export class ProductDetailPage {
     constructor(private page: Page) {}
 
     public get productNameText() {

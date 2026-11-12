@@ -57,5 +57,11 @@
     },
     "contactUsFile": {
         "filePath": "test-data/files/contact-us-test.txt"
+    },
+    "search": {
+        "productName": "Tshirt",
+        "productNameNotFound": "NonExistingProduct",
+        "productCategory": "Men",
+        "productBrand": "Polo"
     }
 }
