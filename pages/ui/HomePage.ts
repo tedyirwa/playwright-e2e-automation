@@ -49,8 +49,8 @@ export class HomePage {
         await this.signupLoginLink.click();
     }
 
-    public async loggedInAsText(name: string) {
-        return this.page.getByText(`Logged in as ${name}`);
+    public async clickProduct(): Promise<void> {
+        await this.productLink.click();
     }
 
     public async clickDeleteAccount(): Promise<void> {
@@ -69,16 +69,7 @@ export class HomePage {
         await this.testCasesLink.click();
     }
 
-    public async closeVignetteIfVisible(): Promise<void> {
-        try {
-            await this.closeVignette.waitFor({
-                state: "visible",
-                timeout: 2000,
-            });
-
-            await this.closeVignette.click();
-        } catch {
-            // Vignette tidak muncul, lanjutkan test.
-        }
+    public async loggedInAsText(name: string) {
+        return this.page.getByText(`Logged in as ${name}`);
     }
 }
