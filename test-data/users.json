@@ -63,5 +63,8 @@
         "productNameNotFound": "NonExistingProduct",
         "productCategory": "Men",
         "productBrand": "Polo"
+    },
+    "subscription": {
+        "email": "subscription@irwa.com"
     }
 }

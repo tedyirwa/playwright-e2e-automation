@@ -7,7 +7,9 @@ export class HomePage {
     private deleteAccountLink;
     private contactUsLink;
     private testCasesLink;
-    private closeVignette;
+    private footer;
+    private subscriptionEmailInput;
+    private subscriptionButton;
 
     constructor(private page: Page) {
         this.signupLoginLink = page.getByRole("link", {
@@ -37,7 +39,11 @@ export class HomePage {
             })
             .first();
 
-        this.closeVignette = page.locator(".continue-prompt-text");
+        this.footer = this.page.locator("footer");
+
+        this.subscriptionEmailInput = this.page.locator("#susbscribe_email");
+
+        this.subscriptionButton = this.page.locator("#subscribe");
     }
 
     public async openHomePage(): Promise<void> {
@@ -71,5 +77,28 @@ export class HomePage {
 
     public async loggedInAsText(name: string) {
         return this.page.getByText(`Logged in as ${name}`);
+    }
+
+    public async scrollToFooter(): Promise<void> {
+        await this.footer.scrollIntoViewIfNeeded();
+    }
+
+    public get subscriptionHeadingText() {
+        return this.page.getByRole("heading", {
+            name: "Subscription",
+            exact: true,
+        });
+    }
+
+    public async fillSubscriptionEmail(email: string): Promise<void> {
+        await this.subscriptionEmailInput.fill(email);
+    }
+
+    public async clickSubscriptionButton(): Promise<void> {
+        await this.subscriptionButton.click();
+    }
+
+    public get subscriptionSuccessMessage() {
+        return this.page.locator("#success-subscribe .alert-success");
     }
 }
