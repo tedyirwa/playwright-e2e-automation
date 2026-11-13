@@ -1,118 +1,73 @@
 # Playwright E2E Automation
 
-A UI End-to-End (E2E) test automation project built with **Playwright and TypeScript**, using [Automation Exercise](https://automationexercise.com/) as the application under test.
+A personal project where I practice web UI test automation using Playwright and TypeScript.
 
-This project demonstrates practical test automation skills through realistic user scenarios, maintainable test architecture, and automated browser interactions.
+I'm using [Automation Exercise](https://automationexercise.com/) as the testing website and working through its test cases to get more hands-on experience with browser automation.
 
-## Project Objectives
+## What I'm Working On
 
-- Build maintainable UI automation tests using Playwright.
-- Apply the Page Object Model (POM) design pattern.
-- Organize test scenarios using the Arrange-Act-Assert (AAA) pattern.
-- Validate critical user journeys and application behavior.
-- Practice debugging, locator strategies, and automated test reporting.
+The project covers common user activities, such as:
 
-## Tech Stack
+- User registration and login
+- Form submission
+- Page navigation
+- Product listing and search
+- Shopping cart functionality
+- Subscription forms
 
-| Technology | Purpose |
-|---|---|
-| Playwright | Browser automation and E2E testing |
-| TypeScript | Test implementation |
-| Node.js | JavaScript runtime |
-| npm | Dependency management |
-| Git & GitHub | Version control and source code management |
+I'm gradually adding more test cases as I work through the scenarios.
 
-## Testing Application
+## Tools & Technologies
 
-**Application:** [Automation Exercise](https://automationexercise.com/)
-
-The project uses the website's public interface to practice functional UI testing across authentication, navigation, product management, and shopping cart workflows.
-
-## Project Architecture
-
-The project follows the **Page Object Model (POM)** design pattern.
-
-- **Page Objects:** Encapsulate page locators and reusable interactions.
-- **Test Specifications:** Contain test scenarios, execution flow, and assertions.
-- **Feature Files:** Document test scenarios using Gherkin syntax. These files serve as documentation and are not executed through Cucumber.
-
-Tests are organized using the Arrange-Act-Assert (AAA) approach:
-
-1. **Arrange:** Prepare the browser and test prerequisites.
-2. **Act:** Perform user interactions.
-3. **Assert:** Verify expected application behavior.
+- **Playwright** – Browser automation
+- **TypeScript** – Writing test scripts
+- **Node.js & npm** – Project runtime and package management
+- **Git & GitHub** – Version control
 
 ## Project Structure
 
 ```text
 playwright-e2e-automation/
-│
-├── features/
-│   ├── user-authentication.feature
-│   ├── contact-us.feature
-│   ├── navigation.feature
-│   ├── products.feature
-│   └── subscription.feature
-│
-├── pages/
-│   └── ui/
-│       ├── HomePage.ts
-│       ├── AuthPage.ts
-│       ├── AccountInformationPage.ts
-│       ├── AccountCreatedPage.ts
-│       ├── AccountDeletedPage.ts
-│       ├── ContactUsPage.ts
-│       ├── ProductsPage.ts
-│       ├── ProductsDetailPage.ts
-│       ├── TestCasesPage.ts
-│       └── CartPage.ts
-│
-├── tests/
-│   └── ui/
-│       ├── register-user.spec.ts
-│       ├── login-user.spec.ts
-│       ├── login-user-invalid.spec.ts
-│       ├── logout-user.spec.ts
-│       ├── register-user-existing-email.spec.ts
-│       ├── contact-us.spec.ts
-│       ├── test-cases-page.spec.ts
-│       ├── products.spec.ts
-│       └── subscription.spec.ts
-│
-├── test-data/
-│   ├── users.json
-│   └── files/
-│
-├── utils/
-│   └── handleGoogleVignette.ts
-│
+├── features/       # Gherkin test scenarios
+├── pages/ui/       # Page Object classes
+├── tests/ui/       # Playwright test scripts
+├── test-data/      # Test data and sample files
+├── utils/          # Reusable helper functions
 ├── playwright.config.ts
 ├── package.json
 └── README.md
 ```
 
-## Test Coverage
+## How the Tests Are Organized
 
-The project covers the following functional areas:
+I'm using the Page Object Model (POM) to keep page locators and interactions separate from test scenarios.
 
-| Test Cases | Scenarios |
-|---|---|
-| TC001–TC005 | User registration, login, invalid login, logout, and existing email registration |
-| TC006 | Contact Us form submission |
-| TC007 | Test Cases page navigation |
-| TC008 | Product listing and product detail verification |
-| TC009 | Product search |
-| TC010–TC011 | Subscription on Home and Cart pages |
-| TC012 | Add multiple products to Cart |
-| TC013 | Verify product quantity in Cart — In Progress |
+Each test follows the Arrange-Act-Assert (AAA) pattern:
 
-Additional scenarios will be added as the project develops.
+- **Arrange:** Set up the test.
+- **Act:** Perform actions on the website.
+- **Assert:** Check whether the expected result is correct.
 
-*Note: Test case implementation and execution status may differ. Refer to the actual test results for the latest verification status.*
+I also keep Gherkin feature files as documentation for the test scenarios. They are not executed using Cucumber.
+
+## Test Scenarios
+
+| Test Cases  | Description                                       |
+| ----------- | ------------------------------------------------- |
+| TC001–TC005 | Registration, login, logout, and login validation |
+| TC006       | Contact Us form                                   |
+| TC007       | Test Cases page navigation                        |
+| TC008       | Product listing and product details               |
+| TC009       | Search products                                   |
+| TC010–TC011 | Subscription on Home and Cart pages               |
+| TC012       | Add multiple products to Cart                     |
+| TC013       | Verify product quantity in Cart (in progress)     |
+
+More scenarios will be added as I continue working through the test cases.
 
 ## Getting Started
 
-### Prerequisites
+### Requirements
 
 - Node.js
 - npm
@@ -124,11 +79,6 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/tedyirwa/playwright-e2e-automation.git
-```
-
-Navigate to the project directory:
-
-```bash
 cd playwright-e2e-automation
 ```
 
@@ -136,17 +86,12 @@ Install dependencies:
 
 ```bash
 npm install
-```
-
-Install Playwright browser:
-
-```bash
 npx playwright install chromium
 ```
 
-## Running Tests
+### Run Tests
 
-Run the complete test suite:
+Run all tests:
 
 ```bash
 npm test
@@ -158,37 +103,18 @@ Run a specific test file:
 npm test -- tests/ui/products.spec.ts
 ```
 
-View the HTML test report:
+Open the HTML report:
 
 ```bash
 npx playwright show-report
 ```
 
-## Test Reliability and Debugging
+## Notes
 
-The project includes a reusable Google Vignette handler to help manage advertising overlays that may interfere with browser interactions.
-
-Playwright's built-in assertions are used to validate UI elements and expected application behavior with automatic retry capabilities.
-
-Test failures can be investigated using Playwright screenshots, error context, and HTML reports.
-
-## Future Improvements
-
-- Expand functional test coverage.
-- Improve test data management.
-- Add API testing.
-- Strengthen test isolation and reliability.
-- Improve CI/CD test execution.
-- Expand negative and edge-case testing.
+This is an ongoing project. I'm using it to improve my understanding of Playwright, TypeScript, test design, locator strategies, and debugging through hands-on practice.
 
 ## Author
 
 **Muhammad Tedy Irwansyah**
 
-QA Automation Engineer | Android Engineer
-
 GitHub: [tedyirwa](https://github.com/tedyirwa)
-
----
-
-*This repository is an ongoing QA automation portfolio project focused on practical Playwright testing, maintainable automation architecture, and continuous learning.*
